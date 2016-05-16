@@ -1,0 +1,28 @@
+<div class="issue-list">
+
+  <% issues.each do |i| %>
+
+  <article class="issue clearfix">
+    <div class="avatar">
+      <a href="/happypeter">
+        <img src=http://tp3.sinaimg.cn/2802042662/180/40063868739/1 alt="">
+      </a>    
+    </div>
+      <div class="body">
+        <h5 class="title">
+       <%= link_to i.title, issue_path(i) %>
+        </h5>
+        <%=  link_to "听听看",i.content ,class: "read-more"%>
+        <span class="meta-data">
+          <a href="http://weibo.com/oceancx/">Ocean-藏心</a>
+          <%= time_ago_in_words(i.created_at) %> 前        
+        </span>
+      </div>
+      <div class="issue-comment-count">
+    <i class="fa fa-comments icon-muted"></i>
+       <%= link_to i.comments.count, i %>
+      </div>
+
+    </article>
+    <% end %>
+  </div>

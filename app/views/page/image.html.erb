@@ -1,0 +1,27 @@
+<div class="home-banner" data-stretch="images/image.jpg" >
+
+  <div class="banner-inner container clearfix">
+    <h1>美景如画</h1>
+    <p class="subheading">陶醉其中</p>
+    <div class="home-banner-links">
+      <%= link_to "分享新图片", "/issues/new", class: "banner-btn btn" %>
+    </div>
+  </div>
+</div>
+<div class="issue-list-header">
+  <div class="container clearfix">
+    <h1 class="issue-list-heading">图片列表</h1>
+  </div>
+</div>
+
+<div class="container clearfix">
+  <%= render partial: 'issue_list', locals: { issues: @issues } %>
+</div>
+
+<div class="container clearfix">
+  <%= render partial: 'song_list', locals: { songs: @songs } %>
+</div>
+
+<script>
+$('.home-banner').anystretch();
+</script>

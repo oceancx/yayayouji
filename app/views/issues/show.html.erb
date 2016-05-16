@@ -1,0 +1,27 @@
+<div class="issue-heading">
+  <div class="container">
+    <%= @issue.title %>
+
+    <% if current_user&&current_user.name == "Ocean-藏心"   %>
+    <%= link_to 'edit', edit_issue_path(@issue), class: "btn btn-primary" %>
+    <%= link_to 'destroy', issue_path(@issue), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="replies">
+    <article class="reply clearfix">
+      <div class="avatar">
+        <img src="http://tp3.sinaimg.cn/2802042662/180/40063868739/1" alt="" class="image-circle">
+      </div>
+      <div class="body">
+        <div class="heading">
+          <h5 class="name"><a href="http://weibo.com/oceancx/">Ocean-藏心</a></h5>
+        </div>
+        <%= @issue.content %>
+      </div>
+    </article>
+    <%= render partial: 'shared/comment_list', locals: {comments: @comments} %>
+    <%= render partial: 'shared/comment_box', locals: {issue: @issue} %>
+  </div>
+</div>

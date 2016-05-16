@@ -1,0 +1,8 @@
+<div class="banner-inner container clearfix">
+	<%= link_to "写信", "/letters/new", class: "banner-btn btn" %>
+</div>
+
+
+<div class="container clearfix">
+  <%= render partial: 'letter_list', locals: { letters: @letters } %>
+</div>
