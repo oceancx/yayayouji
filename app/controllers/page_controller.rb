@@ -6,22 +6,22 @@ class PageController < ApplicationController
 
 	def music
 		@issues = Issue.all.reverse
-		@songs = Song.all
+		@songs = Song.all.reverse
 	end
 
 	def video
 		@issues = Issue.all.reverse
-		@songs = Song.all
+		@songs = Song.all.reverse
 	end
 
 	def book
 		@issues = Issue.all.reverse
-		@songs = Song.all
+		@songs = Song.all.reverse
 	end
 
 	def digest
 		@issues = Issue.all.reverse
-		@songs = Song.all
+		@songs = Song.all.reverse
 	end
 
 
