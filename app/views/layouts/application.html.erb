@@ -9,6 +9,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= params[:controller] + '-' + params[:action] %>">
+ <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="./js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- 自定js，用于响应按钮事件 -->
+    <script src="./js/function6.js"></script>
   <div class="navbar clearfix">
     <div class="container">
       <a class="navbar-brand" href="/">
