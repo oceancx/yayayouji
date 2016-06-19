@@ -1,7 +1,7 @@
 class PageController < ApplicationController
 	def travelnote
 		@issues = Issue.all.reverse
-		@songs = Song.all
+		@songs = Song.all.reverse
 	end
 
 	def music
