@@ -1,28 +1,50 @@
+ <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="./js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- 自定js，用于响应按钮事件 -->
+    <script src="./js/function6.js"></script>
+
+ <!--Panel Template-->
+ <div class="modal fade" id="listenpanel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">试听音乐</h4>
+      </div>
+      <div class="modal-body" id="listen">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="issue-list">
-
   <% issues.each do |i| %>
-
   <article class="issue clearfix">
     <div class="avatar">
       <a href="/happypeter">
         <img src=http://tp3.sinaimg.cn/2802042662/180/40063868739/1 alt="">
       </a>    
     </div>
-      <div class="body">
-        <h5 class="title">
-       <%= link_to i.title, issue_path(i) %>
-        </h5>
-        <%=  link_to "听听看",i.content ,class: "read-more"%>
-        <span class="meta-data">
-          <a href="http://weibo.com/oceancx/">Ocean-藏心</a>
-          <%= time_ago_in_words(i.created_at) %> 前        
-        </span>
-      </div>
-      <div class="issue-comment-count">
-    <i class="fa fa-comments icon-muted"></i>
-       <%= link_to i.comments.count, i %>
-      </div>
+    <div class="body">
+      <h5 class="title">
+        <div id="song_id" style="display:none"><%= i.content %></div>
+        <%= link_to i.title, "javascript:void(0)",id: "song" %>
+      </h5>
+      <%=  link_to "简介",issue_path(i) ,class: "read-more" %>
+    </div>
+    <span class="meta-data">
+      <a href="http://weibo.com/oceancx/">Ocean-藏心</a>
+      <%= time_ago_in_words(i.created_at) %> 前        
+    </span>
 
-    </article>
-    <% end %>
-  </div>
+    <div class="issue-comment-count">
+      <i class="fa fa-comments icon-muted"></i>
+      <%= link_to i.comments.count, i %>
+    </div>
+  </article>
+  <% end %>
+</div>

@@ -2,31 +2,14 @@ body {
   font-family: sans-serif;
   margin: 0;
   font-size: 14px;
+  padding: 0;
   color: #666;
 }
 
 .container {
   width: 960px;
-  margin: 0 auto;
-  
-}
-
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.clearfix {
-  *zoom: 1;
+  padding: 0;
+  margin: 0 auto; 
 }
 
 ul {
@@ -36,6 +19,8 @@ ul {
 }
 
 a{
+  padding: 0;
+  margin: 0;
   text-decoration: none;
   color: #c0865e;
 }

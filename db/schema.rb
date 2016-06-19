@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506143806) do
+ActiveRecord::Schema.define(version: 20160525124720) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content",    limit: 65535
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160506143806) do
     t.integer  "sender_id",   limit: 4
     t.integer  "receiver_id", limit: 4
     t.string   "title",       limit: 255
-    t.text     "content",     limit: 65535
+    t.text     "content",     limit: 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_read"
